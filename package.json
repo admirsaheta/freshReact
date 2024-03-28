@@ -5,14 +5,16 @@
   "author": "",
   "license": "",
   "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
   "keywords": [],
   "repository": {
     "type": "git",
     "url": ""
   },
   "scripts": {
-    "dev": "concurrently \"pnpm build --watch\" \"pnpm storybook\" \"pnpm test\" ",
-    "build": "tsup --onSuccess \"pnpm link:self\"",
+    "build": "npx microbundle-crl --no-compress --format modern,cjs",
+    "start": "npx microbundle-crl watch --no-compress --format modern,cjs",
     "type-check": "tsc",
     "prepare": "husky",
     "commit": "cz",
@@ -59,6 +61,7 @@
   "devDependencies": {
     "@babel/core": "7.24.0",
     "@babel/preset-env": "7.24.0",
+    "@babel/preset-modules": "^0.1.6",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@ryansonshine/commitizen": "4.2.8",

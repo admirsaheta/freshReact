@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import * as React from 'react';
-import styles from './styles.module.css';
+import styles from './css/styles.module.css';
 
 // need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
